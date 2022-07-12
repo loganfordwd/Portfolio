@@ -1,964 +1,220 @@
-* {
-    outline: 0px solid red;
-    /*01101b*/
-}
+<!DOCTYPE html>
+<html lang="en">
 
-@media screen and (min-width: 1336px) and (min-height: 768px) {}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@media screen and (max-width: 1060px) {
-    #primary {
-        width: 67%;
+
+
+    <title>Logan</title>
+    <link rel="stylesheet" href="LFWD_homepage_stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </style>
+</head>
+<div class="background"></div>
+
+<body class="with_nav">
+
+    <div class="right_email">
+        <div class="vertical"></div>
+        <a id="email_right_text" href="mailto:loganfordwd@gmail.com">loganfordwd@gmail.com</a>
+    </div>
+    <div class="left_email">
+        <div class="vertical"></div>
+        <a id="icons" href="#" class="fa fa-github"></a>
+        <a id="icons2" href="https://www.instagram.com/loganwford/?hl=en" class="fa fa-instagram"></a>
+        <a id="icons3" href="#" class="fa fa-linkedin"></a>
+    </div>
+
+
+    <div id="wrapper">
+        <div id="main">
+            <div id="inner">
+
+                <!--Navigation bar code-->
+
+                <header>
+                    <h1 class="logo"></h1>
+                    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                    <nav>
+                        <ul>
+                            <li><a class="active" href="LFWB_homepage.html">Home</a></li>
+                            <li><a onClick="smoothScroll(document.getElementById('second'))">Portfolio</a></li>
+                            <li><a href="LFWB_about_me.html">About me</a></li>
+                            <li><a href="##">Contact Me</a></li>
+                        </ul>
+                    </nav>
+                    <label for="nav-toggle" class="nav-toggle-label">
+                      <span></span>
+                    </label>
+                </header>
+
+
+                <!--End of code for the navigation bar-->
+
+                <!--title/ header for the homepage-->
+                <div id="homepage" class="flex height-fix">
+                    <div class="img-overlay-wrap">
+                        <svg width="1000" height="700">
+                    <rect width="1000" height="00" style="fill:rgb(1,36,63);stroke-width:3;stroke:rgb(0,0,0)" transform="rotate(-45)"  />
+                  </svg>
+                    </div>
+                    <div class="homepage_title">
+
+                        <div class="flex1">
+
+                            <div class="title_text">
+                                I'm Logan, I'm a Jr front end web developer.
+                            </div>
+                            <div class="btn_margin">
+                                <div class="scroll_port_btn">
+
+                                    <button type="button" onclick="smoothScroll(document.getElementById('second'))">Skip to the important stuff:</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--START OF SVG CODE FOR HOMEPAGE-->
+
+                <div class="svg_rect">
+
+                </div>
+
+                <!--END OF SVG CODE FOR HOMEPAGE-->
+
+
+                <!--End of title code-->
+
+                <!--Start of portfolio code-->
+
+                <div class="portfolio_section">
+                    <div class="portfolio_header">
+                        <div class="second" id="second">
+                            <h1>Portfolio: </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_of_projects">
+
+                    <div class="flex table_headers">
+                        <table>
+                            <tr>
+                                <a class="table_headers" type="button">Projects</a>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <ul style="list-style-type: none; padding-left: 60px">
+                        <div class="portfolio_cards">
+
+                            <li style="float:left">
+                                <div class="portfolio_card_1">
+                                    <img src="file:///Users/loganford/Desktop/sky-coll-page-portfolio.png" alt="sky-coll homepage image">
+                                    <p class="title">SKY-COLL JEWELLERY</p>
+                                    <div class="overlay"></div>
+                                    <div class="button"><a href="https://sky-coll.co.uk/">View the Site</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="float:left; text-decoration: none;">
+                                <div id="sky_coll_desc">
+                                    <h3 style="color: white; left: 15%"></h3>
+                                </div>
+                            </li>
+                    </ul>
+                    </div>
+                </div>
+
+
+
+                <!--End of portfolio code-->
+
+                <!--BEGINNING OF ABOUT ME CODE-->
+                <hr id="hr_divider">
+                </hr>
+                <div class="about_me_section">
+                    <div class="typewriter-effect">
+                        <div class="text" id="typewriter-text"></div>
+                    </div>
+                    <div class="about_me_writing">
+
+                    </div>
+                </div>
+                <!--END OF ABOUT ME CODE-->
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<!--Javascript to hide the menu on button click-->
+<script src="https://use.fontawesome.com/430ad8b17b.js"></script>
+<script>
+    var nav = document.getElementById('access_nav'),
+        body = document.body;
+
+    nav.addEventListener('click', function(e) {
+        body.className = body.className ? '' : 'with_nav';
+        e.preventDefault();
+    });
+</script>
+<!--Javascript for the function to scroll straight to the portfolio page on the button click-->
+<script>
+    window.smoothScroll = function(target) {
+        var scrollContainer = target;
+        do { //find scroll container
+            scrollContainer = scrollContainer.parentNode;
+            if (!scrollContainer) return;
+            scrollContainer.scrollTop += 1;
+        } while (scrollContainer.scrollTop == 0);
+
+        var targetY = 0;
+        do { //find the top of target relatively to the container
+            if (target == scrollContainer) break;
+            targetY += target.offsetTop;
+        } while (target = target.offsetParent);
+
+        scroll = function(c, a, b, i) {
+                i++;
+                if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function() {
+                    scroll(c, a, b, i);
+                }, 20);
+            }
+            // start scrolling
+        scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     }
-    #secondary {
-        width: 30%;
-        margin-left: 3%;
-    }
-}
+</script>
 
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
-:root {
-    --background: white;
-}
+<script>
+    const typeWriter = document.getElementById('typewriter-text');
+    const text = 'About me:';
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+    typeWriter.innerHTML = text;
+    typeWriter.style.setProperty('--characters', text.length);
+</script>
 
-body {
-    margin: 0;
-    background: #222;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-}
+<!--CODE FOR THE PORTFOLIO PAGE-->
 
-.content {
-    height: 200vh;
-    background-image: url(//unsplash.it/1000/1000);
-    background-color: #333;
-    background-blend-mode: multiply;
-    background-size: cover;
-    display: grid;
-    place-items: center;
-}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $("#portfolio_card_1").click(function() {
+            $("p").hide();
+        });
+        $("#portfolio_card_1").click(function() {
+            $("p").show();
+        });
+    });
+</script>
 
-/* navigation styles start here */
+<!--END OF CODE FOR THE PORTFOLIO PAGE-->
 
-header {
-    background: var(--background);
-    text-align: center;
-    z-index: 999;
-    width: 100%;
-    position: absolute;
-}
-
-
-/* changed this from the tutorial video to
-allow it to gain focus, making it tabbable */
-
-.nav-toggle {
-    position: absolute !important;
-    top: -9999px !important;
-    left: -9999px !important;
-}
-
-.nav-toggle:focus~.nav-toggle-label {
-    outline: 3px solid rgba(lightblue, .75);
-}
-
-.nav-toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: 1em;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    color: black;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block;
-    background: black;
-    height: 2px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    content: '';
-    position: absolute;
-}
-
-.nav-toggle-label span::before {
-    bottom: 7px;
-}
-
-.nav-toggle-label span::after {
-    top: 7px;
-}
-
-nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--background);
-    width: 100%;
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 400ms ease-in-out;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin: 5%;
-}
-
-nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
-}
-
-nav a {
-    color: black;
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 150ms ease-in-out;
-    font-weight: bold;
-    font-family: andale Mono, monospace;
-}
-
-nav a:hover {
-    color: #000;
-}
-
-.nav-toggle:checked~nav {
-    transform: scale(1, 1);
-}
-
-.nav-toggle:checked~nav a {
-    opacity: 1;
-    transition: opacity 250ms ease-in-out 250ms;
-}
-
-@media screen and (min-width: 800px) {
-    .nav-toggle-label {
-        display: none;
-    }
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-    }
-    .logo {
-        grid-column: 2 / 3;
-    }
-    nav {
-        /* this causes issues with Edge, since it's unsupported */
-        /* the following lines are not from my video, but add Edge support */
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1, 1);
-        background: none;
-        top: initial;
-        left: initial;
-        /* end Edge support stuff */
-        grid-column: 3 / 4;
-        display: flex;
-        /*justify-content: flex-end;*/
-        align-items: center;
-    }
-    nav ul {
-        display: flex;
-    }
-    nav li {
-        margin-left: 3em;
-        margin-bottom: 0;
-    }
-    nav a {
-        opacity: 1;
-        position: relative;
-    }
-    nav a::before {
-        content: '';
-        display: block;
-        height: 5px;
-        background: #0a5029;
-        position: absolute;
-        top: -.75em;
-        left: 0;
-        right: 0;
-        transform: scale(0, 1);
-        transition: transform ease-in-out 250ms;
-    }
-    nav a:hover::before {
-        transform: scale(1, 1);
-    }
-}
-
-
-/* Media Queries: Tabled Portrait */
-
-@media screen and (max-width: 768px) {
-    #primary {
-        width: 100%;
-    }
-    #secondary {
-        width: 100%;
-        margin: 0;
-        border: none;
-    }
-}
-
-body {
-    margin: 0;
-    background-color: #f5f0e7;
-    max-width: 2560px;
-    max-height: 1440px;
-    font-family: monospace;
-    padding-left: 0%;
-    padding-right: 0%;
-}
-
-.right_email {
-    width: 40px;
-    position: fixed;
-    left: auto;
-    right: 20px;
-    z-index: 10;
-    color: black;
-    top: 70%
-}
-
-.right_email::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-    background-color: var(--light-slate);
-}
-
-#email_right_text {
-    margin: 0px auto;
-    padding: 10px;
-    font-family: var(--font-mono);
-    font-size: var(--fz-xxs);
-    line-height: var(--fz-lg);
-    letter-spacing: 0.1em;
-    -webkit-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-    position: fixed;
-    text-decoration: none;
-    color: black;
-}
-
-#email_right_text:hover {
-    color: white;
-    transition: 0.4s;
-}
-
-.left_email {
-    width: 40px;
-    position: fixed;
-    left: 20px;
-    right: auto;
-    z-index: 10;
-    color: black;
-    top: 70%
-}
-
-.left_email::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-    background-color: var(--light-slate);
-}
-
-#icons {
-    margin: 20px auto;
-    padding: 10px;
-    font-size: 30px;
-    line-height: var(--fz-lg);
-    letter-spacing: 0.1em;
-    -webkit-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-    position: fixed;
-    text-decoration: none;
-    color: black;
-}
-
-#icons:hover {
-    color: white;
-    transition: 0.4s;
-}
-
-#icons2 {
-    margin: 20px auto;
-    padding: 10px;
-    font-size: 30px;
-    line-height: var(--fz-lg);
-    letter-spacing: 0.1em;
-    -webkit-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-    position: fixed;
-    text-decoration: none;
-    color: black;
-    margin-top: 6%;
-}
-
-#icons2:hover {
-    color: white;
-    transition: 0.4s;
-}
-
-#icons3 {
-    margin: 20px auto;
-    padding: 10px;
-    font-size: 30px;
-    line-height: var(--fz-lg);
-    letter-spacing: 0.1em;
-    -webkit-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-    position: fixed;
-    text-decoration: none;
-    color: black;
-    margin-top: 10.5%;
-}
-
-#icons3:hover {
-    color: white;
-    transition: 0.4s;
-}
-
-
-/*INNER DIV STYLING*/
-
-#wrapper {
-    -webkit-overflow-scrolling: touch;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: var(--viewport-height);
-    overflow: hidden;
-    position: relative;
-    z-index: 2;
-}
-
-#main {
-    --alignment: center;
-    --flex-alignment: center;
-    --border-radius-tl: 0;
-    --border-radius-tr: 0;
-    --border-radius-br: 0;
-    --border-radius-bl: 0;
-    align-items: center;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-content: center;
-    max-width: 100%;
-    position: relative;
-    text-align: var(--alignment);
-    z-index: 1;
-    transition: opacity 1s ease-in-out 0s;
-}
-
-#main>.inner>.full {
-    margin-left: calc(var(--padding-horizontal) * -1);
-    max-width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
-    width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
-}
-
-#inner {
-    --padding-horizontal: 3rem;
-    --padding-vertical: 0rem;
-    --spacing: 3rem;
-    --width: 75rem;
-    border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
-    max-width: 100%;
-    position: relative;
-    width: var(--width);
-    z-index: 1;
-    padding: var(--padding-vertical) var(--padding-horizontal);
-}
-
-
-/*END OF INNER DIV STYLING*/
-
-
-/*hide menu icon*/
-
-.menu-button {
-    margin-top: 2.4%;
-    padding-left: 0px;
-    width: 1%;
-    float: left;
-    position: absolute;
-    padding-right: 100%;
-}
-
-.menu-button a {
-    color: black;
-}
-
-.menu-button a {
-    color: black;
-}
-
-.menu-button a:hover {
-    color: white;
-}
-
-
-/*End of hide menu button styling*/
-
-
-/*Code for the navigation bar*/
-
-#main_nav {
-    display: none;
-    position: absolute;
-    padding-left: 50px;
-    left: 100px;
-    padding-top: 4px;
-    width: 90%;
-    font-family: monospace;
-    font-size: 16px;
-}
-
-#main_nav ul {
-    list-style-type: none;
-    margin-top: 1%;
-    overflow: hidden;
-    width: 95%;
-}
-
-#main_nav li {
-    display: inline;
-    margin: 0 15px;
-    float: left;
-}
-
-#main_nav a {
-    text-decoration: none;
-    color: black;
-}
-
-#main_nav li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    width: 190px;
-    /* fixed width */
-    text-decoration: none;
-}
-
-#main_nav li a:hover {
-    background-color: #0a5029;
-    border-radius: 25px;
-    transition: 0.2s;
-    color: white;
-}
-
-#main_nav li a :active {
-    color: blue;
-}
-
-.with_nav #main_nav {
-    display: block;
-}
-
-#main_nav:target {
-    display: block;
-}
-
-#homepage_btn_navbar {
-    float: left;
-}
-
-#main_nav a :active {
-    color: grey;
-}
-
-.right_nav {
-    float: right;
-    position: relative;
-}
-
-.top-section {
-    height: 11%;
-    position: absolute;
-    top: 1%;
-    left: 0;
-    width: 100%;
-    opacity: 0.6;
-}
-
-
-/*End of code for the navigation bar*/
-
-
-/*Code for the 'title' of the homepage*/
-
-.flex1 {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 22px 22px 43px #62605c, -22px -22px 43px #ffffff;
-    border-radius: 15px;
-}
-
-.homepage_title {
-    margin-top: 20%;
-}
-
-.title_text {
-    font-size: 34pt;
-    padding-left: 5%;
-    font-family: andale Mono, monospace;
-    color: black;
-    padding-bottom: 8%;
-    text-align: left;
-    margin-top: 8%;
-}
-
-.title_text::before {
-    content: '<title>';
-    font-family: 'La Belle Aurore', cursive;
-    color: black;
-    font-size: 1rem;
-    position: absolute;
-    margin-top: -3rem;
-    left: 4.5rem;
-    letter-spacing: 0.2rem;
-}
-
-.scroll_port_btn::before {
-    content: '</title>';
-    font-family: 'La Belle Aurore', cursive;
-    color: black;
-    font-size: 1rem;
-    position: absolute;
-    margin-top: -3.5rem;
-    left: 4.5rem;
-    letter-spacing: 0.2rem;
-}
-
-.scroll_port_btn::after {
-    content: '</body>';
-    font-family: 'La Belle Aurore', cursive;
-    color: black;
-    font-size: 0.7rem;
-    position: absolute;
-    margin-top: 8rem;
-    left: 1rem;
-    letter-spacing: 0.2rem;
-}
-
-.flex1:before {
-    content: '<body>';
-    font-family: 'La Belle Aurore', cursive;
-    color: black;
-    font-size: 0.7rem;
-    position: absolute;
-    margin-top: -30rem;
-    left: 1rem;
-    letter-spacing: 0.2rem;
-}
-
-
-/*End of code for the homepage*/
-
-
-/*Portfolio section code*/
-
-.portfolio_section {
-    display: flex;
-    margin-top: 30%;
-    width: 100%;
-    background-color: #0a5029;
-    border-radius: 0 !important;
-    max-width: 100vw;
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    margin-left: -48vw;
-    right: auto;
-}
-
-.header_text {
-    margin-left: 20%;
-}
-
-h1 {
-    font-family: andale Mono, monospace;
-    color: white;
-    margin-left: 20%;
-}
-
-.scroll_port_btn :hover {
-    cursor: pointer;
-    color: black;
-}
-
-.btn_margin {
-    margin-left: 2.5rem;
-}
-
-
-/*End of portfolio code*/
-
-button {
-    width: 100%;
-    height: 15%;
-    margin-top: 3%;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #f5f0e7;
-    font-family: andale Mono, monospace;
-    font-size: 20pt;
-    margin-left: 20%;
-    margin-top: 8%;
-    text-decoration: none;
-    color: black;
-    transition: 0.3s;
-    padding: 10px .25rem;
-    margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    margin-bottom: 4%;
-}
-
-button:hover {
-    cursor: pointer;
-    color: #fff;
-    box-shadow: inset 500px 0 0 0 #bab6af;
-}
-
-.second {
-    width: 100%;
-    height: 20%;
-}
-
-
-/*START OF EMAIL TEXT STYLING*/
-
-
-/*END OF EMAIL STYLING*/
-
-
-/*table of projects for the portfolio page*/
-
-.table_of_projects {
-    display: flex;
-    flex-direction: column;
-    background-color: #f5f0e7;
-    border-radius: 0 !important;
-    max-width: 100vw;
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    margin-left: -50vw;
-    right: auto;
-}
-
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-td {
-    text-align: center;
-    padding: 10px 18px;
-}
-
-.table_headers {
-    margin-top: 3%;
-    color: black;
-    font-size: 16pt;
-    font-family: andale Mono, monospace;
-    align-items: center;
-}
-
-.table_of_projects a {
-    color: black;
-    text-decoration: none;
-    margin: 20px;
-    display: inline-block;
-    position: relative;
-}
-
-.table_headers:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: black;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-    cursor: pointer;
-}
-
-.table_headers:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-
-/*START Portfolio card 1 STYLING*/
-
-.portfolio_card_1 {
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 5%;
-    width: 500px;
-    height: 300px;
-    opacity: 0.7;
-    left: 5%;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background 0.5s ease;
-}
-
-.portfolio_card_1:hover .overlay {
-    display: block;
-    background: gray;
-    opacity: 0.8;
-}
-
-img {
-    position: absolute;
-    width: 500px;
-    height: 300px;
-    left: 0;
-    opacity: 1;
-}
-
-.title {
-    position: absolute;
-    width: 500px;
-    left: 0;
-    top: 120px;
-    font-weight: 700;
-    font-size: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    color: black;
-    z-index: 1;
-    transition: top .5s ease;
-}
-
-.portfolio_card_1:hover .title {
-    top: 90px;
-}
-
-.button {
-    position: absolute;
-    width: 500px;
-    left: 0;
-    top: 180px;
-    text-align: center;
-    opacity: 0;
-    transition: opacity .35s ease;
-}
-
-.button a {
-    width: 200px;
-    padding: 12px 48px;
-    text-align: center;
-    color: black;
-    border: solid 2px black;
-    z-index: 1;
-}
-
-.portfolio_card_1:hover .button {
-    opacity: 1;
-}
-
-.portfolio_card_1:hover .img {
-    opacity: 0.5;
-}
-
-
-/*END of portfolio card 1 styling*/
-
-.portfolio_card_2 img {
-    margin-top: 5%;
-    width: 30%;
-}
-
-
-/*ABOUT ME STYLING*/
-
-.about_me_section {
-    background-color: #f5f0e7;
-    width: 100%;
-    border-radius: 0 !important;
-    max-width: 100vw;
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    margin-left: -50vw;
-    right: auto;
-}
-
-.about_me_text {
-    background-color: #f5f0e7;
-    color: black;
-    font-family: monospace;
-    margin-left: 10%;
-    font-size: large;
-    text-decoration: none;
-}
-
-.about_me_text a {
-    text-decoration: none;
-    color: black;
-}
-
-.about_me_text:hover a {
-    text-decoration: underline;
-    transition: 0.5s;
-}
-
-hr {
-    color: black;
-    background: black;
-    margin: 0;
-}
-
-.img-overlay-wrap {
-    position: relative;
-    display: inline-block;
-    /* <= shrinks container to image size */
-    transition: transform 350ms ease-in-out;
-}
-
-.img-overlay-wrap img {
-    /* <= optional, for responsiveness */
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-.img-overlay-wrap svg {
-    position: absolute;
-    top: 0rem;
-    left: 65rem;
-}
-
-.img-overlay-wrap:hover {
-    transform: rotate( 15deg);
-}
-
-
-/*START OF HR DIVIDER*/
-
-hr {
-    border: 0;
-    padding: 0;
-    position: relative;
-    width: 100%;
-    border-radius: 0 !important;
-    max-width: 100vw;
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    margin-left: -50vw;
-    right: auto;
-    background-color: #f5f0e7;
-}
-
-#hr_divider::before {
-    width: 70%;
-    border-bottom: solid 1px black;
-    border-top: solid 1px black;
-    height: 6px;
-    margin-top: -1.5px;
-    background-color: #f5f0e7;
-    align-items: center;
-}
-
-hr::before {
-    content: '';
-    display: inline-block;
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
-
-/*END OF HR DIVIDER*/
-
-.typewriter-effect {
-    display: flex;
-    justify-content: center;
-    font-family: monospace;
-    color: black;
-}
-
-.typewriter-effect>.text {
-    max-width: 0;
-    animation: typing 5s steps(var(--characters)) infinite;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 30px;
-    margin-top: 3%;
-}
-
-.typewriter-effect:after {
-    content: " ";
-    animation: blink 1s infinite;
-    animation-timing-function: step-end;
-}
-
-@keyframes typing {
-    75%,
-    100% {
-        max-width: calc(var(--characters) * 1ch);
-    }
-}
-
-@keyframes blink {
-    0%,
-    75%,
-    100% {
-        opacity: 1;
-    }
-    25% {
-        opacity: 0;
-    }
-}
+</html>
