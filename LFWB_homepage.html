@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logan</title>
+    <link rel="stylesheet" href="LWFB_homepage_stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </style>
+</head>
+<div class="background"></div>
+
+<body class="with_nav">
+
+    <div class="right_email">
+        <div class="vertical"></div>
+        <a id="email_right_text" href="mailto:loganfordwd@gmail.com">loganfordwd@gmail.com</a>
+    </div>
+    <div class="left_email">
+        <div class="vertical"></div>
+        <a id="icons" href="#" class="fa fa-github"></a>
+        <a id="icons2" href="https://www.instagram.com/loganwford/?hl=en" class="fa fa-instagram"></a>
+        <a id="icons3" href="#" class="fa fa-linkedin"></a>
+    </div>
+
+
+
+    <div id="wrapper">
+        <div id="main">
+            <div id="inner">
+
+                <!--Navigation bar code-->
+
+                <div class="menu-button">
+                    <a href="navigation_bar" id="access_nav"><i class="fa fa-bars"></i></a>
+                </div>
+
+                <nav id="main_nav">
+                    <ul style="margin-bottom: 10px">
+                        <li><a class="active" href="LFWB_homepage.html">Home</a></li>
+                        <li><a onClick="smoothScroll(document.getElementById('second'))">Portfolio</a></li>
+                        <li><a href="LFWB_about_me.html">About me</a></li>
+                        <li><a href="##">Contact Me</a></li>
+                    </ul>
+                    <hr id="hr_divider">
+                    </hr>
+                </nav>
+
+
+                <!--End of code for the navigation bar-->
+
+                <!--title/ header for the homepage-->
+                <div id="homepage" class="flex height-fix">
+                    <div class="img-overlay-wrap">
+                        <svg width="1000" height="700">
+                    <rect width="1000" height="00" style="fill:rgb(1,36,63);stroke-width:3;stroke:rgb(0,0,0)" transform="rotate(-45)"  />
+                  </svg>
+                    </div>
+                    <div class="homepage_title">
+
+                        <div class="flex1">
+
+                            <div class="title_text">
+                                I'm Logan, I'm a Jr front end web developer.
+                            </div>
+                            <div class="btn_margin">
+                                <div class="scroll_port_btn">
+
+                                    <button type="button" onclick="smoothScroll(document.getElementById('second'))">Skip to the important stuff:</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--START OF SVG CODE FOR HOMEPAGE-->
+
+                <div class="svg_rect">
+
+                </div>
+
+                <!--END OF SVG CODE FOR HOMEPAGE-->
+
+
+                <!--End of title code-->
+
+                <!--Start of portfolio code-->
+
+                <div class="portfolio_section">
+                    <div class="portfolio_header">
+                        <div class="second" id="second">
+                            <h1>Portfolio: </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table_of_projects">
+
+                    <div class="flex table_headers">
+                        <table>
+                            <tr>
+                                <a class="table_headers" type="button">Projects</a>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <ul style="list-style-type: none; padding-left: 60px">
+                        <div class="portfolio_cards">
+
+                            <li style="float:left">
+                                <div class="portfolio_card_1">
+                                    <img src="file:///Users/loganford/Desktop/sky-coll-page-portfolio.png" alt="sky-coll homepage image">
+                                    <p class="title">SKY-COLL JEWELLERY</p>
+                                    <div class="overlay"></div>
+                                    <div class="button"><a href="https://sky-coll.co.uk/">View the Site</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="float:left; text-decoration: none;">
+                                <div id="sky_coll_desc">
+                                    <h3 style="color: white; left: 15%"></h3>
+                                </div>
+                            </li>
+                    </ul>
+                    </div>
+                </div>
+
+
+
+                <!--End of portfolio code-->
+
+                <!--BEGINNING OF ABOUT ME CODE-->
+                <hr id="hr_divider">
+                </hr>
+                <div class="about_me_section">
+                    <div class="typewriter-effect">
+                        <div class="text" id="typewriter-text"></div>
+                    </div>
+                    <div class="about_me_writing">
+
+                    </div>
+                </div>
+                <!--END OF ABOUT ME CODE-->
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<!--Javascript to hide the menu on button click-->
+<script src="https://use.fontawesome.com/430ad8b17b.js"></script>
+<script>
+    var nav = document.getElementById('access_nav'),
+        body = document.body;
+
+    nav.addEventListener('click', function(e) {
+        body.className = body.className ? '' : 'with_nav';
+        e.preventDefault();
+    });
+</script>
+<!--Javascript for the function to scroll straight to the portfolio page on the button click-->
+<script>
+    window.smoothScroll = function(target) {
+        var scrollContainer = target;
+        do { //find scroll container
+            scrollContainer = scrollContainer.parentNode;
+            if (!scrollContainer) return;
+            scrollContainer.scrollTop += 1;
+        } while (scrollContainer.scrollTop == 0);
+
+        var targetY = 0;
+        do { //find the top of target relatively to the container
+            if (target == scrollContainer) break;
+            targetY += target.offsetTop;
+        } while (target = target.offsetParent);
+
+        scroll = function(c, a, b, i) {
+                i++;
+                if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function() {
+                    scroll(c, a, b, i);
+                }, 20);
+            }
+            // start scrolling
+        scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+    }
+</script>
+
+<script>
+    const typeWriter = document.getElementById('typewriter-text');
+    const text = 'About me:';
+
+    typeWriter.innerHTML = text;
+    typeWriter.style.setProperty('--characters', text.length);
+</script>
+
+<!--CODE FOR THE PORTFOLIO PAGE-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#portfolio_card_1").click(function() {
+            $("p").hide();
+        });
+        $("#portfolio_card_1").click(function() {
+            $("p").show();
+        });
+    });
+</script>
+
+<!--END OF CODE FOR THE PORTFOLIO PAGE-->
+
+</html>
