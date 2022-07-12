@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me | Logan Ford</title>
+    <link rel="stylesheet" href="LFWB_about_me.css">
+
+</head>
+
+<body class="with_nav">
+
+    <!--Navigation bar code-->
+
+    <div class="menu-button">
+        <a href="navigation_bar" id="access_nav"><i class="fa fa-bars"></i></a>
+    </div>
+
+    <nav id="main_nav">
+        <ul>
+            <li><a class="active" href="LFWB_homepage.html">Home</a></li>
+            <li><a href="LFWB_homepage.html">Portfolio</a></li>
+            <li><a href="##">About me</a></li>
+            <li><a href="##">Contact Me</a></li>
+
+            <div class="right_nav">
+                <input type="image" src="https://static.thenounproject.com/png/1664849-200.png" style="width: 20%; float:right">
+            </div>
+        </ul>
+    </nav>
+    </div>
+    <!--End of code for the navigation bar-->
+
+    <!--ABOUT ME TITLE-->
+
+    <div class="animated-title">
+        <div class="text-top">
+            <div>
+                <span>About</span>
+            </div>
+        </div>
+        <div class="text-bottom">
+            <div>Me.</div>
+        </div>
+    </div>
+
+    <!--END OF ABOUT ME TITLE-->
+
+    <!--START OF ABOUT ME SECTION-->
+
+    <div class="about_me_text">
+
+        <p class="text"></p>
+    </div>
+
+    <!--END OF ABOUT ME SECTION-->
+
+
+</body>
+
+
+<!--Javascript to hide the menu on button click-->
+<script src="https://use.fontawesome.com/430ad8b17b.js"></script>
+<script>
+    var nav = document.getElementById('access_nav'),
+        body = document.body;
+
+    nav.addEventListener('click', function(e) {
+        body.className = body.className ? '' : 'with_nav';
+        e.preventDefault();
+    });
+</script>
+
+
+</html>
